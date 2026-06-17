@@ -407,7 +407,9 @@ const AdminApp = (() => {
             const convertableQuotes = quotes.filter(q => q.status !== 'converted');
 
             pageContent.innerHTML = `
-                ${convertableQuotes.length ? `<button class="btn-add" onclick="AdminApp.showCreateClient()"><i class="fas fa-user-plus"></i> Create Client from Quote</button>` : ''}
+                ${convertableQuotes.length 
+                    ? `<button class="btn-add" onclick="AdminApp.showCreateClient()"><i class="fas fa-user-plus"></i> Create Client from Quote</button>` 
+                    : `<button class="btn-add" style="opacity:0.5;cursor:not-allowed;" title="Create an accepted quote first before creating a client." onclick="alert('You must create and accept a Quote first before you can convert it into a Client.')"><i class="fas fa-user-plus"></i> Create Client from Quote</button>`}
                 <table class="data-table">
                     <thead><tr><th>Name</th><th>Username</th><th>Email</th><th>Project</th><th>Contract</th><th>Status</th><th>Last Login</th><th>Actions</th></tr></thead>
                     <tbody>
