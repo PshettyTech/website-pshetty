@@ -14,7 +14,9 @@ const transporter = nodemailer.createTransport({
 });
 
 const FROM = `"Pshetty Tech" <${process.env.GMAIL_USER}>`;
-const BASE = process.env.BASE_URL || 'http://localhost:3000';
+// Railway automatically provides RAILWAY_PUBLIC_DOMAIN. If available, use it. Otherwise, use BASE_URL or fallback to localhost.
+const fallbackDomain = process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : 'http://localhost:3000';
+const BASE = process.env.BASE_URL || fallbackDomain;
 
 // ─── CTA Button Helper ───
 function ctaButton(label, href, type) {
