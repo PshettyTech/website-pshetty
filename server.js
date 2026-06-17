@@ -12,19 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ─── Security & Global Middleware ───
-app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://cdnjs.cloudflare.com"],
-            scriptSrcAttr: ["'unsafe-inline'"],
-            styleSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com", "https://fonts.googleapis.com"],
-            fontSrc: ["'self'", "https://cdnjs.cloudflare.com", "https://fonts.gstatic.com", "data:"],
-            imgSrc: ["'self'", "data:", "blob:", "https:"],
-            connectSrc: ["'self'", "https://cdnjs.cloudflare.com"],
-        },
-    },
-})); // Secure HTTP headers
+app.use(helmet({ contentSecurityPolicy: false })); // Secure HTTP headers (CSP disabled to allow inline JS)
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
