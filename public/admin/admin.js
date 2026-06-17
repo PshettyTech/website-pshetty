@@ -464,6 +464,7 @@ const AdminApp = (() => {
                     ${emailBadge}
                     <p style="font-size:.72rem;color:#ef4444;margin-top:8px;">⚠️ Copy these credentials now! The password cannot be retrieved later.</p>
                 </div>`;
+            await renderClients();
         } catch (err) {
             document.getElementById('cc-result').innerHTML = `<p style="color:#ef4444">${err.message}</p>`;
         }
