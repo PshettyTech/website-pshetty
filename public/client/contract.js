@@ -10,15 +10,30 @@
 
     // ─── Contract Terms ───
     const TERMS = [
-        { icon: 'fa-file-lines', title: 'SCOPE OF SERVICES', text: 'The Agency agrees to provide website development, website design, mobile app development, and custom software development services as outlined in the attached Proposal. Additional services such as SEO, maintenance, and support may be included as per mutual agreement.' },
-        { icon: 'fa-calendar', title: 'TERM', text: 'This Agreement begins on the date signed below and continues for the duration specified in the project timeline, unless terminated earlier by either party with 15 days\' written notice.' },
-        { icon: 'fa-indian-rupee-sign', title: 'PAYMENT TERMS', text: 'The Client agrees to pay the Agency the fees outlined in the Proposal. Invoices are due within 7 days of the invoice date. Late payments may be subject to a 5% late fee.' },
-        { icon: 'fa-handshake', title: 'CLIENT RESPONSIBILITIES', text: 'The Client agrees to provide all necessary information, materials, and access required for the Agency to perform the services. Timely feedback and communication are essential for successful project completion.' },
-        { icon: 'fa-lock', title: 'CONFIDENTIALITY', text: 'Both parties agree to keep confidential all non-public information shared during the term of this Agreement and not disclose it to any third party without written consent.' },
-        { icon: 'fa-shield-check', title: 'OWNERSHIP', text: 'Upon full payment, all deliverables including source code, designs, and documentation become the property of the Client.' },
-        { icon: 'fa-ban', title: 'TERMINATION', text: 'Either party may terminate this Agreement with written notice if the other party breaches any material term and fails to cure within 15 days of such notice.' },
-        { icon: 'fa-exclamation-triangle', title: 'LIMITATION OF LIABILITY', text: 'The Agency shall not be liable for any indirect, incidental, or consequential damages arising from the services provided.' },
-        { icon: 'fa-gavel', title: 'GOVERNING LAW', text: 'This Agreement shall be governed by and construed in accordance with the laws of India.' },
+        { icon: 'fa-file-lines', title: 'SCOPE OF SERVICES', text: 'Services shall be provided strictly as per the approved Statement of Work (SOW), quotation, or Annexure A attached to this Agreement. Any work outside this scope shall require separate written approval and additional charges.' },
+        { icon: 'fa-indian-rupee-sign', title: 'PAYMENT TERMS', text: 'A non-refundable advance of minimum 40% is required prior to commencement. The remaining balance becomes due upon completion and acceptance. Failure to complete payment authorizes the Agency to suspend or terminate services without liability.' },
+        { icon: 'fa-check-circle', title: 'USER ACCEPTANCE & APPROVAL (UAT)', text: 'Upon completion, the Agency shall provide access for review. The Client shall have 5 (five) days to test and report issues in writing. If no feedback is received within this period, the project shall be deemed accepted. Upon acceptance, full payment becomes immediately due.' },
+        { icon: 'fa-ban', title: 'NO REFUND POLICY', text: 'All payments are strictly non-refundable once work has commenced.' },
+        { icon: 'fa-server', title: 'DELIVERY & ACCESS CONTROL', text: 'The Agency retains full control over code, hosting, and deployment until full payment is received. No ownership or access shall be transferred before full settlement.' },
+        { icon: 'fa-user-clock', title: 'CLIENT OBLIGATIONS', text: 'The Client shall provide lawful content, timely responses, and required materials. Failure to provide inputs or communication for 30 consecutive days shall result in the project being marked as "Dormant." In such case, the Agency reserves the right to invoice for all completed work. A restart fee may be required to resume the project.' },
+        { icon: 'fa-scale-balanced', title: 'LEGAL USE & COMPLIANCE', text: 'The Client agrees not to use the deliverables for unlawful purposes under Indian law. Violation shall result in immediate termination without refund.' },
+        { icon: 'fa-lock', title: 'CONFIDENTIALITY (NDA)', text: 'Both parties agree to keep confidential any proprietary, business, or technical information shared during the project. Such information shall not be disclosed to third parties without prior written consent. This obligation shall survive termination of the Agreement.' },
+        { icon: 'fa-shield-halved', title: 'INDEMNITY', text: 'The Client agrees to indemnify and hold harmless the Agency from any claims arising due to misuse, illegal activity, or violation of laws.' },
+        { icon: 'fa-exclamation-triangle', title: 'LIMITATION OF LIABILITY', text: 'The Agency shall not be liable for indirect or consequential damages. Total liability shall not exceed the total amount paid.' },
+        { icon: 'fa-copyright', title: 'INTELLECTUAL PROPERTY', text: 'All rights remain with the Agency until full payment is made. Upon full payment, ownership transfers to the Client (excluding third-party components).' },
+        { icon: 'fa-bullhorn', title: 'PORTFOLIO & MARKETING RIGHTS', text: 'The Agency retains the right to display the project in its portfolio and marketing materials. A discreet credit ("Developed by Pshetty Tech") may be included unless declined in writing.' },
+        { icon: 'fa-cubes', title: 'THIRD-PARTY SERVICES', text: 'The Agency is not responsible for failures of third-party services.' },
+        { icon: 'fa-headset', title: 'POST-LAUNCH SUPPORT & WARRANTY', text: 'A 14-day limited warranty is provided for fixing critical bugs. Post this period, all updates and fixes shall be chargeable unless covered under a separate maintenance agreement.' },
+        { icon: 'fa-triangle-exclamation', title: 'TERMINATION & CURE PERIOD', text: 'Immediate termination applies for: Non-payment, Illegal activities. For other issues, a 5-day Cure Notice shall be provided. Failure to resolve results in termination without refund.' },
+        { icon: 'fa-clock-rotate-left', title: 'DELAYED PAYMENT', text: 'Delayed payments beyond 7 days shall incur a 2% monthly penalty. Services may be suspended until cleared.' },
+        { icon: 'fa-file-invoice-dollar', title: 'TAXES (GST & TDS)', text: 'All prices are exclusive of GST. GST shall be charged additionally. If TDS is deducted, the Client must provide Form 16A. Failure shall be treated as non-payment.' },
+        { icon: 'fa-user-shield', title: 'DATA & PRIVACY', text: 'The Client is responsible for compliance with applicable data protection laws.' },
+        { icon: 'fa-handshake', title: 'INDEPENDENT CONTRACTOR', text: 'The Agency is an independent contractor. No partnership, joint venture, or employment relationship is created.' },
+        { icon: 'fa-gavel', title: 'DISPUTE RESOLUTION (ARBITRATION)', text: 'Parties shall first attempt resolution through mutual discussion. If unresolved within 30 days, disputes shall be referred to a sole arbitrator in Kalaburagi under the Arbitration and Conciliation Act, 1996. The decision shall be final and binding.' },
+        { icon: 'fa-landmark', title: 'GOVERNING LAW & JURISDICTION', text: 'This Agreement shall be governed by the laws of India. Courts in Kalaburagi, Karnataka shall have exclusive jurisdiction.' },
+        { icon: 'fa-cloud-bolt', title: 'FORCE MAJEURE', text: 'The Agency shall not be liable for delays due to events beyond control.' },
+        { icon: 'fa-scissors', title: 'SEVERABILITY', text: 'If any provision of this Agreement is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.' },
+        { icon: 'fa-file-signature', title: 'ENTIRE AGREEMENT', text: 'This Agreement, along with the SOW, constitutes the complete understanding between both parties.' },
     ];
 
     // Render terms
@@ -59,6 +74,7 @@
             document.getElementById('cf-name').value = c.full_name || '';
             document.getElementById('cf-email').value = c.email || '';
             document.getElementById('cf-phone').value = c.phone || '';
+            document.getElementById('cf-business-name').value = c.company_name || '';
         })
         .catch(err => console.error('Contract load error:', err));
 
@@ -143,7 +159,8 @@
                     full_name: document.getElementById('cf-name').value.trim(),
                     email: document.getElementById('cf-email').value.trim(),
                     phone: document.getElementById('cf-phone').value.trim(),
-                    aadhaar: document.getElementById('cf-aadhaar').value.trim().replace(/\s/g, ''),
+                    business_name: document.getElementById('cf-business-name').value.trim(),
+                    business_address: document.getElementById('cf-business-address').value.trim(),
                     signature_data: signatureData,
                     signature_type: sigType,
                 }),

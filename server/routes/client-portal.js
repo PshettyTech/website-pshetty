@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { query, encrypt } = require('../config/db');
+const { query } = require('../config/db');
 const { clientAuth } = require('./client-auth');
 
 // All routes require client auth
@@ -104,10 +104,10 @@ router.get('/contract', async (req, res) => {
 router.post('/contract/sign', async (req, res) => {
     try {
         const clientId = req.client.id;
-        const { full_name, email, phone, aadhaar, signature_data, signature_type } = req.body;
+        const { full_name, email, phone, business_name, business_address, signature_data, signature_type } = req.body;
 
-        if (!full_name || !signature_data) {
-            return res.status(400).json({ error: 'Name and signature are required' });
+        if (!full_name || !signature_data || !business_name) {
+            return res.status(400).json({ error: 'Name, Business Name, and signature are required' });
         }
 
         // Get project info from quote
@@ -117,29 +117,28 @@ router.post('/contract/sign', async (req, res) => {
             [clientId]
         );
 
-        const aadhaarEnc = encrypt(aadhaar);
         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
         // Save contract
         await query(
             `INSERT INTO client_contracts
-             (client_id, project_title, project_description, pricing_summary, timeline, client_full_name, client_email, client_phone, client_aadhaar_encrypted, signature_data, signature_type, signed_at, ip_address)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, NOW(), $12)`,
+             (client_id, project_title, project_description, pricing_summary, timeline, client_full_name, client_email, client_phone, client_business_name, client_business_address, signature_data, signature_type, signed_at, ip_address)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, NOW(), $13)`,
             [
                 clientId,
                 client.rows[0]?.project_type || 'Project',
                 client.rows[0]?.project_description || '',
                 client.rows[0]?.estimated_price ? `₹${client.rows[0].estimated_price}` : 'TBD',
                 client.rows[0]?.estimated_timeline || 'TBD',
-                full_name, email, phone, aadhaarEnc,
+                full_name, email, phone, business_name, business_address,
                 signature_data, signature_type || 'drawn', ip
             ]
         );
 
         // Update client record
         await query(
-            'UPDATE clients SET contract_signed = true, first_login_complete = true, full_name = $2, email = $3, phone = $4, aadhaar_encrypted = $5 WHERE id = $1',
-            [clientId, full_name, email, phone, aadhaarEnc]
+            'UPDATE clients SET contract_signed = true, first_login_complete = true, full_name = $2, email = $3, phone = $4, company_name = $5, business_address = $6 WHERE id = $1',
+            [clientId, full_name, email, phone, business_name, business_address]
         );
 
         // Create notification

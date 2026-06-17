@@ -491,6 +491,27 @@ const AdminApp = (() => {
                     <div class="stat-box"><div class="stat-box__label">Last Login</div><div style="font-size:.9rem;">${c.last_login ? new Date(c.last_login).toLocaleString('en-IN') : 'Never'}</div></div>
                 </div>
 
+                <!-- Contract Details -->
+                ${c.contract_signed && data.contract ? `
+                <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:24px;">
+                    <h3 style="font-weight:700;margin-bottom:16px;">⚖️ Contract & Legal Details</h3>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                        <div><strong style="color:#666;font-size:0.8rem;text-transform:uppercase;">Signatory Name</strong><br/>${data.contract.client_full_name}</div>
+                        <div><strong style="color:#666;font-size:0.8rem;text-transform:uppercase;">Signed At</strong><br/>${new Date(data.contract.signed_at).toLocaleString('en-IN')}</div>
+                        <div><strong style="color:#666;font-size:0.8rem;text-transform:uppercase;">Business Name</strong><br/>${data.contract.client_business_name || '—'}</div>
+                        <div><strong style="color:#666;font-size:0.8rem;text-transform:uppercase;">IP Address (Verified)</strong><br/><code>${data.contract.ip_address || 'Unknown'}</code></div>
+                        <div style="grid-column: 1 / -1;"><strong style="color:#666;font-size:0.8rem;text-transform:uppercase;">Business Address</strong><br/>${data.contract.client_business_address || '—'}</div>
+                    </div>
+                    <div style="margin-top:16px;padding-top:16px;border-top:1px solid #eee;">
+                        <strong style="color:#666;font-size:0.8rem;text-transform:uppercase;">Digital Signature</strong><br/>
+                        ${data.contract.signature_data && data.contract.signature_data.startsWith('data:image') 
+                            ? `<img src="${data.contract.signature_data}" style="max-height:100px; max-width:100%; border:1px solid #ddd; border-radius:4px; margin-top:8px; padding:4px;" alt="Signature">` 
+                            : `<div style="font-family:'Dancing Script',cursive; font-size:2rem; padding:8px 0;">${data.contract.signature_data}</div>`
+                        }
+                    </div>
+                </div>
+                ` : ''}
+
                 <!-- Project Section -->
                 <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:16px;">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">

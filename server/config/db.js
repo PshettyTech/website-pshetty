@@ -14,29 +14,6 @@ async function query(text, params) {
     return res;
 }
 
-// ─── Encryption for sensitive data (Aadhaar) ───
-const ALGO = 'aes-256-cbc';
-const ENC_KEY = crypto.scryptSync(process.env.JWT_SECRET || 'default-key', 'salt', 32);
-
-function encrypt(text) {
-    if (!text) return null;
-    const iv = crypto.randomBytes(16);
-    const cipher = crypto.createCipheriv(ALGO, ENC_KEY, iv);
-    let encrypted = cipher.update(text, 'utf8', 'hex');
-    encrypted += cipher.final('hex');
-    return iv.toString('hex') + ':' + encrypted;
-}
-
-function decrypt(encryptedText) {
-    if (!encryptedText) return null;
-    const [ivHex, enc] = encryptedText.split(':');
-    const iv = Buffer.from(ivHex, 'hex');
-    const decipher = crypto.createDecipheriv(ALGO, ENC_KEY, iv);
-    let decrypted = decipher.update(enc, 'hex', 'utf8');
-    decrypted += decipher.final('utf8');
-    return decrypted;
-}
-
 // ─── Initialize tables ───
 async function initDB() {
     // ── Original tables ──
@@ -126,7 +103,7 @@ async function initDB() {
             email VARCHAR(150) NOT NULL,
             phone VARCHAR(20),
             company_name VARCHAR(150),
-            aadhaar_encrypted TEXT,
+            business_address TEXT,
             contract_signed BOOLEAN DEFAULT false,
             first_login_complete BOOLEAN DEFAULT false,
             is_active BOOLEAN DEFAULT true,
@@ -148,7 +125,8 @@ async function initDB() {
             client_full_name VARCHAR(150),
             client_email VARCHAR(150),
             client_phone VARCHAR(20),
-            client_aadhaar_encrypted TEXT,
+            client_business_name VARCHAR(150),
+            client_business_address TEXT,
             signature_data TEXT,
             signature_type VARCHAR(20) DEFAULT 'drawn',
             signed_at TIMESTAMP,
@@ -274,4 +252,4 @@ async function initDB() {
     `);
 }
 
-module.exports = { query, initDB, pool, encrypt, decrypt };
+module.exports = { query, initDB, pool };

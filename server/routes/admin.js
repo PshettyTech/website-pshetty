@@ -251,11 +251,10 @@ router.get('/clients/:id', auth, async (req, res) => {
         }
         const meetings = (await query('SELECT * FROM meetings WHERE client_id = $1 ORDER BY created_at DESC', [req.params.id])).rows;
         const invoices = (await query('SELECT * FROM invoices WHERE client_id = $1 ORDER BY created_at DESC', [req.params.id])).rows;
-        const contract = (await query('SELECT id, signed_at, client_full_name FROM client_contracts WHERE client_id = $1', [req.params.id])).rows;
+        const contract = (await query('SELECT id, signed_at, client_full_name, client_business_name, client_business_address, ip_address, signature_data FROM client_contracts WHERE client_id = $1', [req.params.id])).rows;
 
         const cl = client.rows[0];
         delete cl.password_hash;
-        delete cl.aadhaar_encrypted;
 
         res.json({ client: cl, project: project.rows[0] || null, stages, updates, meetings, invoices, contract: contract[0] || null });
     } catch (err) {
