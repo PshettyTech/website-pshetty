@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting — Pshetty Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/client/client.css">
+</head>
+<body>
+    <div class="fullpage">
+        <!-- Header -->
+        <div class="fullpage-header">
+            <div class="fullpage-header-grid">
+                <div>
+                    <img src="/assets/logo.png" alt="Pshetty Tech" class="logo">
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> pshettytechofficial@gmail.com</p>
+                    </div>
+                </div>
+                <div style="text-align:right;">
+                    <div style="display:flex;align-items:center;gap:12px;justify-content:flex-end;margin-bottom:16px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" alt="Google Meet" style="height:36px;">
+                        <span style="font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:rgba(255,255,255,.7);">Google Meet</span>
+                    </div>
+                    <h1>LET'S <span>CONNECT!</span></h1>
+                    <p class="desc" style="margin-left:auto;">We use Google Meet for our online meetings to collaborate, discuss, and move your project forward efficiently and professionally.</p>
+                </div>
+            </div>
+            <div style="display:flex;gap:24px;margin-top:32px;">
+                <div style="flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:20px;text-align:center;">
+                    <i class="fas fa-link" style="font-size:1.2rem;color:var(--accent);margin-bottom:8px;display:block;"></i>
+                    <div style="font-weight:700;font-size:.85rem;">MEETING LINK</div>
+                    <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:4px;" id="meet-link-display">Loading...</div>
+                </div>
+                <div style="flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:20px;text-align:center;">
+                    <i class="fas fa-clock" style="font-size:1.2rem;color:var(--accent);margin-bottom:8px;display:block;"></i>
+                    <div style="font-weight:700;font-size:.85rem;">MEETING DURATION</div>
+                    <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:4px;" id="meet-duration">30-60 mins</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="fullpage-body">
+            <div class="fp-grid" style="margin-bottom:24px;">
+                <!-- Purpose -->
+                <div class="fp-section">
+                    <h2>PURPOSE OF THE <span>MEETING</span></h2>
+                    <p style="color:var(--text-muted);line-height:1.7;margin-bottom:20px;">The purpose of this meeting is to understand your vision, discuss project details, align expectations, and plan the next steps for a smooth and successful collaboration.</p>
+                    <div style="display:flex;flex-direction:column;gap:12px;">
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-bullseye"></i></div><div><p>Understand your goals and requirements</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-tasks"></i></div><div><p>Discuss project scope and deliverables</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-clock"></i></div><div><p>Review timeline, milestones & process</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-question-circle"></i></div><div><p>Answer questions and align expectations</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-rocket"></i></div><div><p>Plan the next steps to get started</p></div></div>
+                    </div>
+                </div>
+
+                <!-- Agenda -->
+                <div class="fp-section">
+                    <h2>MEETING <span>AGENDA</span></h2>
+                    <div style="display:flex;flex-direction:column;gap:16px;" id="agenda-list">
+                        <div class="fp-item"><div class="process-step-num" style="width:36px;height:36px;font-size:.8rem;">01</div><div><h4>Introductions</h4><p>Meet the team and get aligned.</p></div></div>
+                        <div class="fp-item"><div class="process-step-num" style="width:36px;height:36px;font-size:.8rem;">02</div><div><h4>Project Overview</h4><p>Discuss your goals, vision & requirements.</p></div></div>
+                        <div class="fp-item"><div class="process-step-num" style="width:36px;height:36px;font-size:.8rem;">03</div><div><h4>Scope & Features</h4><p>Review key features, functionalities & deliverables.</p></div></div>
+                        <div class="fp-item"><div class="process-step-num" style="width:36px;height:36px;font-size:.8rem;">04</div><div><h4>Timeline & Process</h4><p>Walkthrough our process, timeline & milestones.</p></div></div>
+                        <div class="fp-item"><div class="process-step-num" style="width:36px;height:36px;font-size:.8rem;">05</div><div><h4>Next Steps</h4><p>Define action items and what happens next.</p></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guidelines + Prepare -->
+            <div class="fp-grid" style="margin-bottom:24px;">
+                <div class="fp-section">
+                    <h2>MEETING <span>GUIDELINES</span></h2>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-microphone-slash"></i></div><div><p>Please join on time and keep your mic on mute when you're not speaking.</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-camera"></i></div><div><p>Feel free to turn on your camera for better interaction.</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-comment-dots"></i></div><div><p>Use the chat for questions or to share links during the meeting.</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-handshake"></i></div><div><p>Let's keep the meeting productive, respectful, and on track.</p></div></div>
+                    </div>
+                </div>
+                <div class="fp-section">
+                    <h2>WHAT TO <span>PREPARE</span></h2>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div class="fp-item"><div class="fp-item-icon"><i class="fas fa-folder-open"></i></div><div><p>Share any documents, mockups, or references before the meeting.</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon"><i class="fas fa-lightbulb"></i></div><div><p>Have your goals, ideas, and questions ready to discuss.</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon"><i class="fas fa-users"></i></div><div><p>Include key stakeholders from your side (if possible).</p></div></div>
+                        <div class="fp-item"><div class="fp-item-icon"><i class="fas fa-thumbs-up"></i></div><div><p>Be open to suggestions and collaborative discussions.</p></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- After Meeting Steps -->
+            <div class="fp-section" style="text-align:center;">
+                <h2 style="justify-content:center;">WHAT HAPPENS <span>AFTER</span> THE MEETING?</h2>
+                <div class="process-steps">
+                    <div class="process-step"><div class="process-step-num">01</div><h4>Review</h4><p>We'll review the discussion and finalize requirements.</p></div>
+                    <div class="process-step"><div class="process-step-num">02</div><h4>Summary</h4><p>You'll receive a summary with action items.</p></div>
+                    <div class="process-step"><div class="process-step-num">03</div><h4>Proposal</h4><p>We'll share the plan, timeline & proposal.</p></div>
+                    <div class="process-step"><div class="process-step-num">04</div><h4>Approve</h4><p>Once approved, we'll kick off your project!</p></div>
+                    <div class="process-step"><div class="process-step-num">05</div><h4>Build!</h4><p>Let's build something amazing together!</p></div>
+                </div>
+            </div>
+
+            <!-- Join Button -->
+            <div style="text-align:center;padding:32px 0;">
+                <a id="join-meet-btn" href="#" target="_blank" class="btn btn-primary btn-large" style="font-size:1.1rem;padding:20px 56px;">
+                    <i class="fas fa-video"></i> Join Meeting
+                </a>
+                <br>
+                <a href="/client/dashboard.html" class="btn btn-outline" style="margin-top:16px;">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="fp-footer">
+            <div>
+                <strong>WE'RE EXCITED TO CONNECT WITH YOU!</strong><br>
+                <span style="font-size:.72rem;">This is the beginning of a great partnership. See you on the call!</span>
+            </div>
+            <div class="contact-info"><span><i class="fas fa-envelope"></i> pshettytechofficial@gmail.com</span></div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const TOKEN = localStorage.getItem('client_token');
+        if (!TOKEN) { window.location.href = '/client/'; return; }
+
+        const params = new URLSearchParams(window.location.search);
+        const meetingId = params.get('id');
+        if (!meetingId) { window.location.href = '/client/dashboard.html'; return; }
+
+        fetch(`/api/client/portal/meeting/${meetingId}`, {
+            headers: { 'Authorization': `Bearer ${TOKEN}` }
+        })
+        .then(r => r.json())
+        .then(m => {
+            document.getElementById('meet-link-display').textContent = m.meet_link || 'Link will be shared';
+            document.getElementById('meet-duration').textContent = m.duration || '30-60 mins';
+            document.getElementById('join-meet-btn').href = m.meet_link || '#';
+            if (!m.meet_link) document.getElementById('join-meet-btn').style.display = 'none';
+        })
+        .catch(err => console.error('Meeting load error:', err));
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pshetty Tech — Premium technology solutions. Build. Trust. Grow. An immersive cinematic experience showcasing our brand vision.">
+    <title>Pshetty Tech — Build • Trust • Grow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- LOADING SCREEN                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <span class="loader-ps">PS</span>
+                <span class="loader-divider"></span>
+                <span class="loader-name">Pshetty Tech</span>
+            </div>
+            <div class="loader-progress-track">
+                <div id="loader-progress-bar" class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percentage">
+                <span id="loader-percent">0</span>%
+            </div>
+            <div class="loader-hint">Loading cinematic experience...</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SCROLL INDICATOR                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div id="scroll-indicator" class="scroll-indicator">
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
+        <span class="scroll-text">Scroll to explore</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NAVIGATION BAR                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-logo">
+            <span class="nav-ps">PS</span>
+            <span class="nav-name">Pshetty Tech</span>
+        </div>
+        <div class="nav-tagline">BUILD • TRUST • GROW</div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MAIN CANVAS CONTAINER (pinned section)      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="canvas-section" class="canvas-section">
+        <!-- Three.js canvas will be injected here -->
+        <canvas id="webgl-canvas"></canvas>
+
+        <!-- Vignette overlay -->
+        <div class="vignette-overlay"></div>
+
+        <!-- Grain/noise overlay -->
+        <div class="grain-overlay"></div>
+
+        <!-- ═══════════════════════════════════ -->
+        <!-- TEXT OVERLAYS (synced with scroll)  -->
+        <!-- ═══════════════════════════════════ -->
+        <div id="text-build" class="text-overlay text-overlay--build">
+            <div class="text-overlay__label">01</div>
+            <h2 class="text-overlay__heading">BUILD</h2>
+            <p class="text-overlay__sub">Crafting digital experiences<br>with precision engineering</p>
+        </div>
+
+        <div id="text-trust" class="text-overlay text-overlay--trust">
+            <div class="text-overlay__label">02</div>
+            <h2 class="text-overlay__heading">TRUST</h2>
+            <p class="text-overlay__sub">Reliable solutions that<br>stand the test of scale</p>
+        </div>
+
+        <div id="text-grow" class="text-overlay text-overlay--grow">
+            <div class="text-overlay__label">03</div>
+            <h2 class="text-overlay__heading">GROW</h2>
+            <p class="text-overlay__sub">Accelerating businesses<br>into the future</p>
+        </div>
+
+        <!-- Final hold section -->
+        <div id="text-finale" class="text-overlay text-overlay--finale">
+            <div class="finale-tagline">BUILD &nbsp;•&nbsp; TRUST &nbsp;•&nbsp; GROW</div>
+        </div>
+
+        <!-- Frame counter (subtle) -->
+        <div id="frame-counter" class="frame-counter">
+            <span id="current-frame">001</span> / <span id="total-frames">090</span>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="scroll-progress-track">
+            <div id="scroll-progress" class="scroll-progress-bar"></div>
+        </div>
+    </section>
+
+    <!-- Spacer for scroll distance (will be adjusted by GSAP) -->
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SCRIPTS                                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="scene.js"></script>
+    <script src="particles.js"></script>
+    <script src="postprocessing.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

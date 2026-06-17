@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login — Pshetty Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/client/client.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="/assets/logo.png" alt="Pshetty Tech">
+                <h2>Client Portal</h2>
+                <p>Sign in to access your project dashboard</p>
+            </div>
+            <form id="login-form">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" id="login-user" placeholder="Enter your username" required autocomplete="username">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" id="login-pass" placeholder="Enter your password" required autocomplete="current-password">
+                </div>
+                <div id="login-error" class="login-error" style="display:none;"></div>
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+            <p style="margin-top:24px;font-size:.75rem;color:var(--text-light);text-align:center;">
+                Don't have an account? Contact <strong style="color:var(--accent);">Pshetty Tech</strong> to get started.
+            </p>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const form = document.getElementById('login-form');
+        const errDiv = document.getElementById('login-error');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errDiv.style.display = 'none';
+
+            const username = document.getElementById('login-user').value.trim();
+            const password = document.getElementById('login-pass').value;
+
+            try {
+                const res = await fetch('/api/client/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password }),
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    errDiv.textContent = data.error || 'Invalid credentials';
+                    errDiv.style.display = 'block';
+                    return;
+                }
+
+                localStorage.setItem('client_token', data.token);
+                localStorage.setItem('client_data', JSON.stringify(data.client));
+
+                // Route based on onboarding status
+                if (!data.client.contract_signed) {
+                    window.location.href = '/client/contract.html';
+                } else if (!data.client.first_login_complete) {
+                    window.location.href = '/client/welcome.html';
+                } else {
+                    window.location.href = '/client/dashboard.html';
+                }
+            } catch (err) {
+                errDiv.textContent = 'Connection error. Please try again.';
+                errDiv.style.display = 'block';
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract — Pshetty Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/client/client.css">
+</head>
+<body>
+    <div class="contract-page">
+        <div class="contract-container">
+            <!-- Header -->
+            <div class="contract-header">
+                <div class="contract-header-left">
+                    <img src="/assets/logo.png" alt="Pshetty Tech" class="header-logo">
+                    <h1>CLIENT <span>CONTRACT</span></h1>
+                    <p>This Agreement is made between the Client and Pshetty Tech ("Agency") and sets forth the terms and conditions under which services will be provided.</p>
+                </div>
+                <div class="contract-header-right">
+                    <p><i class="fas fa-envelope"></i> pshettytechofficial@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> Contact via Portal</p>
+                    <p style="margin-top:16px;font-weight:700;font-size:.95rem;color:#fff;">DATE: <span id="contract-date"></span></p>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="contract-body">
+                <!-- Info Grid -->
+                <div class="contract-info-grid">
+                    <div class="info-section">
+                        <h3><i class="fas fa-building"></i> AGENCY INFORMATION</h3>
+                        <div class="info-row"><span class="label">Agency Name:</span><span class="value">Pshetty Tech</span></div>
+                        <div class="info-row"><span class="label">Owners:</span><span class="value">Omkar & Ishaan Padashetty</span></div>
+                        <div class="info-row"><span class="label">Email:</span><span class="value">pshettytechofficial@gmail.com</span></div>
+                        <div class="info-row"><span class="label">Experience:</span><span class="value">2+ years, 50+ projects</span></div>
+                    </div>
+                    <div class="info-section">
+                        <h3><i class="fas fa-user"></i> CLIENT INFORMATION</h3>
+                        <div class="info-row"><span class="label">Name / Company:</span><span class="value" id="info-name">—</span></div>
+                        <div class="info-row"><span class="label">Email:</span><span class="value" id="info-email">—</span></div>
+                        <div class="info-row"><span class="label">Project Type:</span><span class="value" id="info-project">—</span></div>
+                        <div class="info-row"><span class="label">Estimated Price:</span><span class="value" id="info-price">—</span></div>
+                        <div class="info-row"><span class="label">Timeline:</span><span class="value" id="info-timeline">—</span></div>
+                    </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="contract-terms" id="terms-list">
+                    <!-- Populated by JS -->
+                </div>
+
+                <!-- Agreement text -->
+                <div style="padding:20px;background:var(--bg);border-radius:var(--radius-sm);margin-bottom:32px;border:1px solid var(--border-light);">
+                    <p style="font-size:.84rem;color:var(--text-muted);line-height:1.7;">
+                        <strong style="color:var(--accent);">AGREEMENT:</strong> By signing below, both parties acknowledge that they have read, understood, and agree to be bound by the terms and conditions of this Agreement.
+                    </p>
+                </div>
+
+                <!-- User Details Form -->
+                <div class="contract-form" id="contract-form-section">
+                    <h3><i class="fas fa-user-check" style="color:var(--accent);margin-right:8px;"></i> Your Details</h3>
+                    <form id="contract-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" id="cf-name" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" id="cf-email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <div class="otp-row">
+                                    <input type="tel" id="cf-phone" required placeholder="+91 XXXXX XXXXX">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Aadhaar / ID Number</label>
+                                <input type="text" id="cf-aadhaar" placeholder="XXXX XXXX XXXX" maxlength="14">
+                            </div>
+                        </div>
+
+                        <!-- Signature -->
+                        <div class="signature-section">
+                            <h3><i class="fas fa-signature" style="color:var(--accent);margin-right:8px;"></i> Digital Signature</h3>
+                            <div class="sig-tabs">
+                                <button type="button" class="sig-tab active" data-type="draw">✏️ Draw</button>
+                                <button type="button" class="sig-tab" data-type="type">⌨️ Type</button>
+                            </div>
+                            <div id="sig-draw-area">
+                                <div class="sig-canvas-wrap">
+                                    <canvas id="sig-canvas" class="sig-canvas"></canvas>
+                                    <button type="button" class="sig-clear" id="sig-clear">Clear</button>
+                                </div>
+                            </div>
+                            <input type="text" id="sig-typed-input" class="sig-typed" placeholder="Type your full name as signature..." style="display:none;">
+                        </div>
+
+                        <!-- Accept -->
+                        <div class="accept-check">
+                            <input type="checkbox" id="cf-accept" required>
+                            <label for="cf-accept">I have read, understood, and agree to all the terms and conditions of this agreement. I confirm that the information provided is accurate.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large" id="submit-contract" style="width:100%;justify-content:center;margin-top:16px;" disabled>
+                            <i class="fas fa-check-circle"></i> Sign & Submit Contract
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="fp-footer" style="border-radius:0 0 var(--radius) var(--radius);">
+                <div>
+                    <strong>THANK YOU!</strong><br>
+                    <span style="font-size:.72rem;">We look forward to helping you bring your ideas to life.</span>
+                </div>
+                <div style="font-size:.72rem;">LET'S BUILD SOMETHING AMAZING TOGETHER.</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/client/contract.js"></script>
+</body>
+</html>

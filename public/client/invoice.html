@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice — Pshetty Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/client/client.css">
+</head>
+<body>
+    <div class="fullpage">
+        <!-- Header -->
+        <div class="fullpage-header">
+            <div class="fullpage-header-grid">
+                <div>
+                    <img src="/assets/logo.png" alt="Pshetty Tech" class="logo">
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> pshettytechofficial@gmail.com</p>
+                    </div>
+                </div>
+                <div style="text-align:right;">
+                    <h1 style="font-size:2.8rem;">INVOICE</h1>
+                    <p class="desc" style="margin-left:auto;margin-top:8px;">Thank you for trusting us with your digital journey.</p>
+                    <div style="margin-top:24px;font-size:.88rem;color:rgba(255,255,255,.7);line-height:2;">
+                        <div><strong>INVOICE NO.</strong> <span id="inv-number" style="margin-left:16px;">—</span></div>
+                        <div><strong>INVOICE DATE</strong> <span id="inv-date" style="margin-left:16px;">—</span></div>
+                        <div><strong>DUE DATE</strong> <span id="inv-due" style="margin-left:16px;">—</span></div>
+                        <div><strong>PAYMENT TERMS</strong> <span id="inv-terms" style="margin-left:16px;">—</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="fullpage-body">
+            <!-- Bill To / Period -->
+            <div class="fp-section">
+                <div class="fp-grid">
+                    <div>
+                        <h2><i class="fas fa-user" style="color:var(--accent);"></i> BILL TO:</h2>
+                        <p style="font-weight:700;font-size:1.05rem;margin-bottom:4px;" id="bill-name">—</p>
+                        <p style="color:var(--text-muted);font-size:.84rem;" id="bill-company">—</p>
+                        <p style="color:var(--text-muted);font-size:.84rem;" id="bill-email">—</p>
+                        <p style="color:var(--text-muted);font-size:.84rem;" id="bill-phone">—</p>
+                    </div>
+                    <div>
+                        <h2><i class="fas fa-calendar" style="color:var(--accent);"></i> FOR THE PERIOD:</h2>
+                        <p style="font-weight:600;font-size:.95rem;" id="bill-period">—</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Line Items -->
+            <div class="fp-section">
+                <table class="invoice-table" id="inv-table">
+                    <thead>
+                        <tr><th>#</th><th>Description</th><th>Deliverables</th><th>Qty</th><th>Unit Price</th><th>Amount</th></tr>
+                    </thead>
+                    <tbody id="inv-items">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+
+                <div class="invoice-totals">
+                    <div class="row"><span>Subtotal</span><span id="inv-subtotal">₹0</span></div>
+                    <div class="row"><span>Tax (<span id="inv-tax-pct">0</span>%)</span><span id="inv-tax">₹0</span></div>
+                    <div class="row total"><span>TOTAL DUE</span><span id="inv-total">₹0</span></div>
+                </div>
+
+                <div style="text-align:center;margin-top:20px;padding:16px;background:var(--accent);color:#fff;border-radius:var(--radius-sm);font-size:.88rem;font-weight:600;" id="pay-notice">
+                    Please make the payment by <span id="pay-due-date">—</span>
+                </div>
+            </div>
+
+            <!-- Payment Details + Notes -->
+            <div class="fp-grid">
+                <div class="fp-section">
+                    <h2>PAYMENT <span>DETAILS</span></h2>
+                    <div id="payment-details" style="display:flex;flex-direction:column;gap:12px;">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+                <div class="fp-section">
+                    <h2><i class="fas fa-sticky-note" style="color:var(--accent);"></i> NOTES</h2>
+                    <ul style="list-style:disc;margin-left:16px;color:var(--text-muted);font-size:.84rem;line-height:2;" id="inv-notes">
+                        <li>This invoice is for the services mentioned above.</li>
+                        <li>Payment not received by the due date may result in a delay in services.</li>
+                        <li>7 days' written notice is required for any cancellation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Thank You -->
+            <div class="fp-section" style="text-align:center;">
+                <p style="font-family:'Dancing Script',cursive;font-size:2rem;color:var(--accent);margin-bottom:8px;">Thank You!</p>
+                <p style="font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;color:var(--text);margin-bottom:4px;">WE APPRECIATE YOUR BUSINESS</p>
+                <p style="color:var(--text-muted);font-size:.88rem;">Let's grow together.</p>
+            </div>
+
+            <!-- Actions -->
+            <div style="text-align:center;padding:24px 0;display:flex;gap:16px;justify-content:center;">
+                <button onclick="window.print()" class="btn btn-primary"><i class="fas fa-download"></i> Download / Print</button>
+                <a href="/client/dashboard.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="fp-footer">
+            <div>
+                <strong>LET'S BUILD SOMETHING AMAZING TOGETHER.</strong><br>
+                <span style="font-size:.72rem;">We turn ideas into powerful digital solutions that drive growth.</span>
+            </div>
+            <div class="contact-info"><span><i class="fas fa-envelope"></i> pshettytechofficial@gmail.com</span></div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const TOKEN = localStorage.getItem('client_token');
+        if (!TOKEN) { window.location.href = '/client/'; return; }
+
+        const params = new URLSearchParams(window.location.search);
+        const invoiceId = params.get('id');
+        if (!invoiceId) { window.location.href = '/client/dashboard.html'; return; }
+
+        fetch(`/api/client/portal/invoices/${invoiceId}`, {
+            headers: { 'Authorization': `Bearer ${TOKEN}` }
+        })
+        .then(r => r.json())
+        .then(inv => {
+            document.getElementById('inv-number').textContent = inv.invoice_number;
+            document.getElementById('inv-date').textContent = new Date(inv.invoice_date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+            document.getElementById('inv-due').textContent = inv.due_date ? new Date(inv.due_date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '—';
+            document.getElementById('inv-terms').textContent = inv.payment_terms || 'Due on Receipt';
+
+            document.getElementById('bill-name').textContent = inv.client_name || '—';
+            document.getElementById('bill-company').textContent = inv.company_name || '';
+            document.getElementById('bill-email').textContent = inv.client_email || '';
+            document.getElementById('bill-phone').textContent = inv.client_phone || '';
+            document.getElementById('bill-period').textContent = inv.billing_period || '—';
+
+            // Line items
+            const items = typeof inv.line_items === 'string' ? JSON.parse(inv.line_items) : (inv.line_items || []);
+            const tbody = document.getElementById('inv-items');
+            tbody.innerHTML = items.map((item, i) => `
+                <tr>
+                    <td><span class="row-num">${String(i + 1).padStart(2, '0')}</span></td>
+                    <td style="font-weight:600;">${item.description || ''}</td>
+                    <td style="font-size:.82rem;color:var(--text-muted);">${item.deliverables || ''}</td>
+                    <td>${item.qty || 1}</td>
+                    <td>₹${Number(item.unit_price || 0).toLocaleString('en-IN')}</td>
+                    <td style="font-weight:600;">₹${Number(item.amount || 0).toLocaleString('en-IN')}</td>
+                </tr>
+            `).join('');
+
+            document.getElementById('inv-subtotal').textContent = `₹${Number(inv.subtotal || 0).toLocaleString('en-IN')}`;
+            document.getElementById('inv-tax-pct').textContent = inv.tax_percent || 0;
+            document.getElementById('inv-tax').textContent = `₹${Number(inv.tax_amount || 0).toLocaleString('en-IN')}`;
+            document.getElementById('inv-total').textContent = `₹${Number(inv.total || 0).toLocaleString('en-IN')}`;
+            document.getElementById('pay-due-date').textContent = inv.due_date ? new Date(inv.due_date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : 'the agreed date';
+
+            // Payment details
+            const pd = typeof inv.payment_details === 'string' ? JSON.parse(inv.payment_details) : (inv.payment_details || {});
+            const pdDiv = document.getElementById('payment-details');
+            if (Object.keys(pd).length) {
+                pdDiv.innerHTML = Object.entries(pd).map(([k, v]) => `
+                    <div class="fp-item"><div class="fp-item-icon blue"><i class="fas fa-university"></i></div><div><h4>${k}</h4><p>${v}</p></div></div>
+                `).join('');
+            } else {
+                pdDiv.innerHTML = '<p style="color:var(--text-muted);font-size:.84rem;">Payment details will be shared separately.</p>';
+            }
+
+            // Notes
+            if (inv.notes) {
+                document.getElementById('inv-notes').innerHTML += `<li>${inv.notes}</li>`;
+            }
+        })
+        .catch(err => console.error('Invoice load error:', err));
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Pshetty Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <!-- PDF Export Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <!-- Excel Import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <!-- LOGIN -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <span class="logo-ps">PS</span>
+                <span class="logo-name">Admin Panel</span>
+            </div>
+            <form id="login-form">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" id="login-user" required autocomplete="username">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" id="login-pass" required autocomplete="current-password">
+                </div>
+                <div id="login-error" class="error" style="display:none;"></div>
+                <button type="submit" class="btn-login">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="dashboard" style="display:none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <span class="logo-ps">PS</span>
+                <span class="logo-text">Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-page="overview"><i class="fas fa-chart-pie"></i> Overview</a>
+                <a href="#" class="sidebar-link" data-page="quotes"><i class="fas fa-file-invoice"></i> Quotes</a>
+                <a href="#" class="sidebar-link" data-page="services"><i class="fas fa-cogs"></i> Services</a>
+                <a href="#" class="sidebar-link" data-page="projects"><i class="fas fa-folder-open"></i> Projects</a>
+                <a href="#" class="sidebar-link" data-page="pricing"><i class="fas fa-tags"></i> Pricing</a>
+                <a href="#" class="sidebar-link" data-page="clients"><i class="fas fa-users"></i> Clients</a>
+                <a href="#" class="sidebar-link" data-page="cold-calls"><i class="fas fa-phone-alt"></i> Cold Calls</a>
+            </nav>
+            <button class="sidebar-logout" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main">
+            <header class="topbar">
+                <h1 id="page-title">Overview</h1>
+                <span id="admin-name" class="admin-name"></span>
+            </header>
+
+            <div id="page-content" class="content">
+                <!-- Dynamic content loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-backdrop" onclick="AdminApp.closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Edit</h3>
+                <button onclick="AdminApp.closeModal()" class="modal-close">&times;</button>
+            </div>
+            <div id="modal-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="/admin/admin.js"></script>
+</body>
+</html>

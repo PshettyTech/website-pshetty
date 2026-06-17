@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Pshetty Tech — Premium software development company. Web, Mobile, SaaS, and AI solutions. Build. Trust. Grow.">
+    <title>Pshetty Tech — Build • Trust • Grow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- LOADING SCREEN                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <img src="/assets/logo.png" alt="Pshetty Tech Logo" class="loader-logo-img">
+            </div>
+            <div class="loader-progress-track">
+                <div id="loader-progress-bar" class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percentage">
+                <span id="loader-percent">0</span>%
+            </div>
+            <div class="loader-hint">Loading cinematic experience...</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SCROLL INDICATOR (removed - not needed)      -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NAVIGATION BAR — Bright & Bold              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-logo">
+            <span class="nav-ps">PS</span>
+            <span class="nav-name">Pshetty Tech</span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#projects" class="nav-link">Portfolio</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#quote" class="nav-link nav-link--cta">GET A QUOTE</a>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO — Bold & Creative                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero">
+        <div class="hero__bg">
+            <img src="/assets/hero-bg.png" alt="" class="hero__bg-img" />
+            <div class="hero__bg-overlay"></div>
+        </div>
+
+        <div class="hero__content">
+            <div class="hero__text">
+                <div class="hero__badge">SOFTWARE ENGINEERS</div>
+                <h1 class="hero__heading">
+                    WE<br>
+                    <span class="hero__highlight">ENGINEER.</span><br>
+                    YOU<br>
+                    SUCCEED.
+                </h1>
+                <div class="hero__bottom">
+                    <div class="hero__desc">
+                        <p>From idea to launch — websites, apps, and custom software built by engineers who actually
+                            ship production code.</p>
+                    </div>
+                    <a href="#quote" class="hero__cta">START YOUR PROJECT &nbsp;→</a>
+                </div>
+            </div>
+
+            <div class="hero__card">
+                <div class="hero__card-inner">
+                    <img src="/assets/logo.png" alt="Pshetty Tech" class="hero__card-logo" />
+                    <div class="hero__card-brand">Pshetty Tech</div>
+                    <div class="hero__card-tagline">PREMIUM SOFTWARE DEVELOPMENT</div>
+                    <div class="hero__card-motto">BUILD. &nbsp;<span>TRUST.</span> &nbsp;<span>GROW.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SERVICES SECTION — Bright & Colorful        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="services" class="section section--white">
+        <div class="container">
+            <div class="section-header" data-anim="fade-left">
+                <span class="section-label section-label--orange">WHAT WE DO</span>
+                <h2 class="section-title">OUR <span class="highlight">EXPERTISE.</span></h2>
+                <p class="section-subtitle">End-to-end development solutions — from landing pages to enterprise
+                    platforms.</p>
+            </div>
+
+            <!-- Service category tabs -->
+            <div class="service-tabs" data-anim-stagger>
+                <button class="service-tab active" data-category="all">All</button>
+                <button class="service-tab" data-category="Web Development">Web</button>
+                <button class="service-tab" data-category="Mobile App Development">Mobile</button>
+                <button class="service-tab" data-category="Software Development">Software</button>
+                <button class="service-tab" data-category="SaaS Development">SaaS</button>
+                <button class="service-tab" data-category="AI Solutions">AI</button>
+            </div>
+
+            <div class="services-grid" id="services-grid">
+                <!-- Populated by sections.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CLIENT STORIES + STATS                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="projects" class="section section--soft">
+        <div class="container">
+            <div class="section-header" data-anim="fade-right">
+                <span class="section-label">PORTFOLIO</span>
+                <h2 class="section-title">SHIPPED & <span class="highlight--purple">PROVEN.</span></h2>
+                <p class="section-subtitle">Real projects, real clients, real code — shipped and running in production.
+                </p>
+            </div>
+
+            <!-- Client Saga Banner (magazine style) -->
+            <div class="client-saga-banner" data-anim="scale-up">
+                <div class="client-saga-banner__left">EDITION 01 · 2026</div>
+                <div class="client-saga-banner__center">THE BUILD LOG</div>
+                <div class="client-saga-banner__right">10+ PROJECTS SHIPPED</div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="testimonial-block" data-anim="fade-up">
+                <p class="testimonial-text">"Every project we take on gets the same treatment — clean architecture,
+                    pixel-perfect UI, and code that actually works at scale. We don't cut corners, we cut launch
+                    timelines."</p>
+                <div class="testimonial-author">
+                    <span class="testimonial-stars">★★★★★</span>
+                    <strong>— OMKAR & ISHAAN, PSHETTY TECH</strong>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-row" data-anim-stagger>
+                <div class="stat-block stat-block--orange">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-block stat-block--purple">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-block stat-block--yellow">
+                    <div class="stat-number">5★</div>
+                    <div class="stat-label">Avg. Rating</div>
+                </div>
+            </div>
+
+            <!-- Projects List -->
+            <div class="projects-list" id="projects-list" style="margin-top: 48px;">
+                <!-- Populated by sections.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ABOUT / FOUNDERS SECTION                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="about" class="section section--white">
+        <div class="container">
+            <div class="section-header" data-anim="fade-up">
+                <span class="section-label section-label--purple">WHO WE ARE</span>
+                <h2 class="section-title">THE <span class="highlight--purple">FOUNDERS.</span></h2>
+            </div>
+
+            <div class="about-content" data-anim="fade-up">
+                <div class="about-text">
+                    <p class="about-lead">We are two B.Tech Computer Science engineers who believe in building real
+                        solutions — not hype, not vaporware, but working software that solves actual problems.</p>
+                    <p>With 2+ years of hands-on development experience and 10+ websites & applications delivered, we
+                        bring a practical, engineering-first approach to every project.</p>
+                    <p>From landing pages to full-stack platforms, billing software to AI chatbots — we've done it,
+                        shipped it, and supported it.</p>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-card" data-anim="fade-up">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card" data-anim="fade-up">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-card" data-anim="fade-up">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="founders" data-anim="fade-up">
+                <div class="founder-card">
+                    <div class="founder-card__image">
+                        <img src="/assets/omkar.png" alt="Omkar Padashetty" class="founder-avatar" />
+                    </div>
+                    <div class="founder-card__info">
+                        <div class="founder-name-bar founder-name-bar--orange">
+                            <h3 class="founder-name">Omkar Padashetty</h3>
+                            <p class="founder-role">Co-Founder & Lead Developer</p>
+                        </div>
+                        <p class="founder-bio">B.Tech CSE Engineer with expertise in full-stack development, scalable
+                            architectures, and delivering production-grade software that businesses depend on.</p>
+                    </div>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-card__image">
+                        <img src="/assets/ishaan.png" alt="Ishaan Padashetty" class="founder-avatar" />
+                    </div>
+                    <div class="founder-card__info">
+                        <div class="founder-name-bar founder-name-bar--purple">
+                            <h3 class="founder-name">Ishaan Padashetty</h3>
+                            <p class="founder-role">Co-Founder & Tech Lead</p>
+                        </div>
+                        <p class="founder-bio">B.Tech CSE Engineer specializing in mobile app development, AI
+                            integrations, and cutting-edge web technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PRICING SECTION                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="pricing" class="section section--soft">
+        <div class="container">
+            <div class="section-header section-header--center" data-anim="fade-up">
+                <span class="section-label section-label--orange">TRANSPARENT PRICING</span>
+                <h2 class="section-title">PLANS & <span class="highlight">PRICING.</span></h2>
+                <p class="section-subtitle">Straightforward pricing with no hidden fees. Custom quotes available for
+                    complex projects.</p>
+            </div>
+
+            <!-- Pricing type tabs -->
+            <div class="pricing-tabs" data-anim="fade-up">
+                <button class="pricing-tab active" data-plan="one-time">One-Time Projects</button>
+                <button class="pricing-tab" data-plan="subscription">Monthly Plans</button>
+            </div>
+
+            <div class="pricing-grid" id="pricing-grid">
+                <!-- Populated by sections.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- QUOTE FORM SECTION                          -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="quote" class="section section--white">
+        <div class="container">
+            <div class="section-header section-header--center" data-anim="fade-up">
+                <span class="section-label">START YOUR PROJECT</span>
+                <h2 class="section-title">GET A FREE <span class="highlight">QUOTE.</span></h2>
+                <p class="section-subtitle">Tell us about your project and receive a professional quotation within
+                    minutes</p>
+            </div>
+
+            <div class="quote-container" data-anim="fade-up">
+                <form id="quote-form" class="quote-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="q-name">Full Name *</label>
+                            <input type="text" id="q-name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="q-company">Company Name</label>
+                            <input type="text" id="q-company" name="company_name" placeholder="Your company (optional)">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="q-email">Email Address *</label>
+                            <input type="email" id="q-email" name="email" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="q-phone">Phone Number</label>
+                            <input type="tel" id="q-phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="q-type">Project Type *</label>
+                            <select id="q-type" name="project_type" required>
+                                <option value="">Select project type...</option>
+                                <optgroup label="Web Development">
+                                    <option value="web-landing">Landing Page</option>
+                                    <option value="web-business">Business Website</option>
+                                    <option value="web-ecommerce">E-commerce Website</option>
+                                    <option value="web-custom">Custom Web App</option>
+                                </optgroup>
+                                <optgroup label="Mobile App Development">
+                                    <option value="mobile-android">Android App</option>
+                                    <option value="mobile-ios">iOS App</option>
+                                    <option value="mobile-cross">Cross-Platform App</option>
+                                </optgroup>
+                                <optgroup label="Software Development">
+                                    <option value="software-billing">Billing Software (GST)</option>
+                                    <option value="software-erp">ERP System</option>
+                                    <option value="software-custom">Custom Business Software</option>
+                                </optgroup>
+                                <optgroup label="SaaS & AI">
+                                    <option value="saas-platform">SaaS Platform</option>
+                                    <option value="saas-dashboard">Admin Dashboard</option>
+                                    <option value="ai-chatbot">AI Chatbot</option>
+                                    <option value="ai-automation">AI Automation Tool</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="q-budget">Budget Range (optional)</label>
+                            <select id="q-budget" name="budget">
+                                <option value="">Select budget range...</option>
+                                <option value="Under ₹10,000">Under ₹10,000</option>
+                                <option value="₹10,000 - ₹25,000">₹10,000 - ₹25,000</option>
+                                <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
+                                <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+                                <option value="₹1,00,000+">₹1,00,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-group--full">
+                        <label for="q-desc">Project Description</label>
+                        <textarea id="q-desc" name="description" rows="4"
+                            placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+
+                    <!-- Live estimate preview -->
+                    <div id="estimate-preview" class="estimate-preview" style="display: none;">
+                        <div class="estimate-label">Estimated Starting Price</div>
+                        <div class="estimate-price" id="estimate-price">₹0</div>
+                        <div class="estimate-note">Final pricing based on detailed requirements</div>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--large" id="quote-submit" style="width:100%;">
+                        <span class="btn-text">GENERATE QUOTE →</span>
+                        <span class="btn-loader" style="display:none;"><i class="fas fa-spinner fa-spin"></i>
+                            Generating...</span>
+                    </button>
+                </form>
+
+                <!-- Success state -->
+                <div id="quote-success" class="quote-success" style="display: none;">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Quote Generated!</h3>
+                    <p>Your professional quotation has been generated and sent to your email.</p>
+                    <div class="success-details">
+                        <div class="success-price">Estimated: <strong id="success-price">₹0</strong></div>
+                        <div class="success-timeline">Timeline: <strong id="success-timeline">--</strong></div>
+                    </div>
+                    <a id="pdf-download" href="#" class="btn btn--primary" target="_blank">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <button class="btn btn--dark"
+                        onclick="document.getElementById('quote-success').style.display='none'; document.getElementById('quote-form').style.display='block'; document.getElementById('quote-form').reset();">
+                        Submit Another Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CTA BANNER                                  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section section--white" style="padding: 0 0 80px;">
+        <div class="container">
+            <div class="cta-banner" data-anim="fade-up">
+                <h3>LET'S BUILD SOMETHING <span>AMAZING.</span></h3>
+                <a href="#quote" class="btn btn--primary btn--large">GET A QUOTE →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FOOTER                                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="nav-ps">PS</span>
+                        <span
+                            style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:rgba(255,255,255,0.9);letter-spacing:0.1em;text-transform:uppercase;">Pshetty
+                            Tech</span>
+                    </div>
+                    <p class="footer-tagline">Build. Trust. Grow.</p>
+                    <p class="footer-desc">Premium software development by engineers who care about real results.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="#services">Web Development</a>
+                    <a href="#services">Mobile Apps</a>
+                    <a href="#services">Custom Software</a>
+                    <a href="#services">AI Solutions</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#projects">Our Work</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#quote">Get a Quote</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <a href="mailto:pshettytech26@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
+                    <a href="#quote"><i class="fas fa-file-alt"></i> Request Quote</a>
+                    <a href="https://wa.me/918618075133" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pshetty Tech. All rights reserved.</p>
+                <p>Designed & Developed by Omkar & Ishaan Padashetty</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/9186180751339" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SCRIPTS                                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/sections.js"></script>
+    <script src="/js/quote-form.js"></script>
+</body>
+
+</html>
